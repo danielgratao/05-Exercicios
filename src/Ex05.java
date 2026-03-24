@@ -3,22 +3,24 @@ import java.util.Scanner;
 public class Ex05 {
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
-        double $h, ht, $b, $i, $d, $f;
+        double $hora, horatrab, $bruto, $inss, $desc, $final;
 
         System.out.printf("Para calcular seu salário mensal, informe as horas trabalhadas no mês:");
-        ht = entrada.nextDouble();
+        horatrab = entrada.nextDouble();
         System.out.println("Informe o valor da hora trabalhada:");
-        $h = entrada.nextDouble();
+        $hora = entrada.nextDouble();
         System.out.printf("Por fim, digite o valor percentual do desconto de INSS:");
-        $i = entrada.nextDouble();
+        $inss = entrada.nextDouble();
 
-        $b = $h * ht;
-        $d = ($i / 100) * $b;
-        $f = $b - $d;
+        $bruto = $hora * horatrab;
+        $desc = ($inss / 100) * $bruto;
+        $final = $bruto - $desc;
 
-        System.out.println("Salário bruto: R$"+$b);
-        System.out.println("Desconto INSS: R$"+$d);
-        System.out.printf("Salário líquido: R$"+$f);
+        System.out.printf("Salário bruto: R$%.2f\n", $bruto);
+        System.out.printf("Desconto INSS: R$-%.2f\n", $desc);
+        System.out.printf(">>>>>>>>>>>>>>>>>>>>>>>>>>>\n");
+        System.out.printf("Salário líquido: R$%.2f\n", $final);
+        System.out.printf("<<<<<<<<<<<<<<<<<<<<<<<<<<<\n");
 
     }
 }
